@@ -11,6 +11,10 @@ from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_groq import ChatGroq
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # Load environment variable for the GROQ API key
 groq_api_key = os.getenv("groq_api_key")
 groq_chat = ChatGroq(groq_api_key=groq_api_key, model_name='mixtral-8x7b-32768')  # llama3-8b-8192, llama-3.1-70b-versatile
