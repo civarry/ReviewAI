@@ -65,7 +65,7 @@ if uploaded_file is not None:
             loader = DirectoryLoader(directory_path, glob="**/*.txt", loader_cls=TextLoader, show_progress=True)
             return loader.load()
 
-        # Create the RAG chain with chat history
+        # Create the RAG chain
         def create_rag_chain(split_docs):
             embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
             embeddings_dir = "chroma_embeddings"  # Directory to store embeddings
